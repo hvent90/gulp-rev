@@ -44,7 +44,7 @@ function transformFilename(file) {
 	// save the old path for later
 	file.revOrigPath = file.path;
 	file.revOrigBase = file.base;
-	file.revHash = revHash(file.contents);
+	file.revHash = revHash(file.contents) + new Date().toISOString();
 
 	file.path = modifyFilename(file.path, function (filename, extension) {
 		var extIndex = filename.indexOf('.');
